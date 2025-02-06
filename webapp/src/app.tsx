@@ -51,6 +51,7 @@ const App = (props: Props): JSX.Element => {
                 <FlashMessages milliseconds={2000}/>
                 <div id='frame'>
                     <div id='main'>
+                        <div>Coool</div>
                         <NewVersionBanner/>
                         <FocalboardRouter history={props.history}/>
                     </div>

@@ -1,17 +1,17 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-const merge = require('webpack-merge');
-const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require("webpack-merge");
+const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const makeCommonConfig = require('./webpack.common.js');
+const makeCommonConfig = require("./webpack.common.js");
 
 const commonConfig = makeCommonConfig();
 
 const config = merge.merge(commonConfig, {
-    mode: 'development',
-    devtool: 'inline-source-map',
+    mode: "development",
+    devtool: "inline-source-map",
     optimization: {
         minimize: false,
     },
@@ -19,20 +19,20 @@ const config = merge.merge(commonConfig, {
         port: 9000,
         open: "/editor.html",
     },
-    entry: ['./src/components/blocksEditor/devmain.tsx'],
+    entry: ["./src/components/blocksEditor/devmain.tsx"],
     plugins: [
         new CopyPlugin({
             patterns: [
-                {from: path.resolve(__dirname, 'static'), to: 'static'},
+                { from: path.resolve(__dirname, "static"), to: "static" },
             ],
         }),
         new HtmlWebpackPlugin({
             inject: true,
-            title: 'Focalboard',
-            chunks: ['main'],
-            template: 'html-templates/deveditor.ejs',
-            filename: 'editor.html',
-            publicPath: '/',
+            title: "CRTVAI",
+            chunks: ["main"],
+            template: "html-templates/deveditor.ejs",
+            filename: "editor.html",
+            publicPath: "/",
             hash: true,
         }),
     ],
@@ -40,9 +40,9 @@ const config = merge.merge(commonConfig, {
 
 module.exports = [
     merge.merge(config, {
-        devtool: 'source-map',
+        devtool: "source-map",
         output: {
-            devtoolNamespace: 'focalboard',
+            devtoolNamespace: "focalboard",
         },
     }),
 ];

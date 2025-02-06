@@ -40,7 +40,7 @@ const SidebarUserMenu = () => {
                         <div className="logo-title">
                             <img
                                 src={
-                                    "https://github.com/CRTVAI/CRTVAI.assets/blob/main/logo/ICON/lp.png"
+                                    "https://raw.githubusercontent.com/CRTVAI/CRTVAI.assets/refs/heads/main/logo/ICON/lp.png"
                                 }
                                 className="FocalboardLogoIcon"
                             />
